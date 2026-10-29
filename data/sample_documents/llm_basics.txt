@@ -1,0 +1,15 @@
+An Introduction to Large Language Models and Modern AI Architectures
+Author: Educational AI Engineering Team
+Version: 1.0.0
+
+1. What is a Large Language Model?
+A Large Language Model (LLM) is an artificial intelligence model trained on vast quantities of human text using deep neural networks based on the transformer architecture. Rather than memorizing facts, an LLM learns statistical patterns, syntactic structures, and semantic relationships between words and phrases. At inference time, the model performs next-token prediction, iteratively outputting the most probable subsequent token given the prompt and conversational history.
+
+2. Understanding Tokens and Embeddings
+Words are not digested directly by neural networks. Instead, text is first converted into numeric chunks called tokens using algorithms such as Byte-Pair Encoding (BPE). One token approximately equals four characters in English. These tokens are then projected into continuous, high-dimensional vector representations known as embeddings. In this vector space, semantically related concepts occupy proximate geometric coordinates, allowing algorithms to measure topical similarity using metrics like cosine distance.
+
+3. Context Windows and Model Limitations
+Every model has an architectural boundary known as the context window. The context window defines the maximum number of tokens (comprising both user inputs and generated output) that can be processed in a single forward pass. Modern models like Gemini 2.0 Flash support context windows of up to 1,000,000 tokens, whereas classic models often operated within 4,000 to 32,000 tokens.
+
+4. The Hallucination Challenge and RAG
+Because LLMs predict probable tokens rather than executing database lookups, they can generate assertions that sound confident and authoritative yet are factually fictitious. This failure mode is termed hallucination. To overcome hallucinations in domain-specific workflows, engineers employ Retrieval-Augmented Generation (RAG). In a RAG architecture, relevant passages from authoritative documents are retrieved from a vector database and injected dynamically into the prompt, forcing the LLM to ground its response strictly in retrieved evidence.
